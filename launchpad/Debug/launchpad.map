@@ -1,0 +1,738 @@
+******************************************************************************
+                  MSP430 Linker PC v4.1.1                      
+******************************************************************************
+>> Linked Tue Apr 05 16:13:13 2016
+
+OUTPUT FILE NAME:   <launchpad.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000cd78
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  SFR                   00000000   00000010  00000000  00000010  RWIX
+  PERIPHERALS_8BIT      00000010   000000f0  00000000  000000f0  RWIX
+  PERIPHERALS_16BIT     00000100   00000100  00000000  00000100  RWIX
+  RAM                   00000200   00000200  00000184  0000007c  RWIX
+  INFOD                 00001000   00000040  00000000  00000040  RWIX
+  INFOC                 00001040   00000040  00000000  00000040  RWIX
+  INFOB                 00001080   00000040  00000000  00000040  RWIX
+  INFOA                 000010c0   00000040  00000000  00000040  RWIX
+  FLASH                 0000c000   00003fe0  000011d7  00002e09  RWIX
+  INT00                 0000ffe0   00000002  00000000  00000002  RWIX
+  INT01                 0000ffe2   00000002  00000000  00000002  RWIX
+  INT02                 0000ffe4   00000002  00000000  00000002  RWIX
+  INT03                 0000ffe6   00000002  00000000  00000002  RWIX
+  INT04                 0000ffe8   00000002  00000000  00000002  RWIX
+  INT05                 0000ffea   00000002  00000000  00000002  RWIX
+  INT06                 0000ffec   00000002  00000000  00000002  RWIX
+  INT07                 0000ffee   00000002  00000002  00000000  RWIX
+  INT08                 0000fff0   00000002  00000000  00000002  RWIX
+  INT09                 0000fff2   00000002  00000002  00000000  RWIX
+  INT10                 0000fff4   00000002  00000000  00000002  RWIX
+  INT11                 0000fff6   00000002  00000000  00000002  RWIX
+  INT12                 0000fff8   00000002  00000000  00000002  RWIX
+  INT13                 0000fffa   00000002  00000000  00000002  RWIX
+  INT14                 0000fffc   00000002  00000000  00000002  RWIX
+  RESET                 0000fffe   00000002  00000002  00000000  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.bss       0    00000200    000000dc     UNINITIALIZED
+                  00000200    0000008e     main.obj (.bss)
+                  0000028e    00000048     uart.obj (.bss)
+                  000002d6    00000006     rts430_eabi.lib : memory.obj (.bss)
+
+.TI.noinit 
+*          0    00000200    00000000     UNINITIALIZED
+
+.sysmem    0    000002dc    00000050     UNINITIALIZED
+                  000002dc    00000004     rts430_eabi.lib : memory.obj (.sysmem)
+                  000002e0    0000004c     --HOLE--
+
+.data      0    0000032c    00000008     
+                  0000032c    00000004     main.obj (.data)
+                  00000330    00000004     rts430_eabi.lib : _lock.obj (.data)
+
+.TI.persistent 
+*          0    0000032c    00000000     UNINITIALIZED
+
+.stack     0    000003b0    00000050     UNINITIALIZED
+                  000003b0    00000002     rts430_eabi.lib : boot.obj (.stack)
+                  000003b2    0000004e     --HOLE--
+
+.text      0    0000c000    00000f88     
+                  0000c000    00000436     cli.obj (.text:_ZN3Cli9KeyNormalEh)
+                  0000c436    00000134     main.obj (.text:_Z12printiostatev)
+                  0000c56a    0000012a     ansicontrol.obj (.text:_Z10SetCursor1ii)
+                  0000c694    000000fe     main.obj (.text:main)
+                  0000c792    00000080     rts430_eabi.lib : memory.obj (.text:free)
+                  0000c812    00000074     cli.obj (.text:_ZN3Cli9AcceptKeyEh)
+                  0000c886    00000066     cli.obj (.text:_Z6setdiriii)
+                  0000c8ec    00000066     cli.obj (.text:_Z8setvalueiii)
+                  0000c952    00000064     cli.obj (.text:_ZN4Line15AcceptKeyNormalEh)
+                  0000c9b6    0000005e     rts430_eabi.lib : copy_decompress_rle.obj (.text:__TI_decompress_rle_core)
+                  0000ca14    0000005e                     : autoinit.obj (.text:_auto_init)
+                  0000ca72    00000040     cli.obj (.text:_Z14simple_str2intPcPi)
+                  0000cab2    0000003e     main.obj (.text:_Z6ioinitv)
+                  0000caf0    00000036     uart.obj (.text:_Z8uartinitv)
+                  0000cb26    00000032     uart.obj (.text:__sti___8_uart_cpp___stdout)
+                  0000cb58    00000030     main.obj (.text:__sti___8_main_cpp_45180902)
+                  0000cb88    0000002c     uart.obj (.text:_Z10QUEUEWriteP5QUEUEh)
+                  0000cbb4    0000002c     cli.obj (.text:_ZN3Cli5KeyUpEv)
+                  0000cbe0    0000002c     cli.obj (.text:_ZN4Line11AcceptKeyBSEv)
+                  0000cc0c    0000002c     rts430_eabi.lib : div16s.obj (.text)
+                  0000cc38    0000002c                     : lsl16.obj (.text)
+                  0000cc64    0000002a     cli.obj (.text:_ZN4Line12AcceptKeyDELEv)
+                  0000cc8e    00000028     uart.obj (.text:_Z11USCI0RX_ISRv)
+                  0000ccb6    00000026     cli.obj (.text:_ZN4Line5FlushEv)
+                  0000ccdc    00000022     ansicontrol.obj (.text:_Z11ClearScreanv)
+                  0000ccfe    00000022     uart.obj (.text:_Z9QUEUEReadP5QUEUEPh)
+                  0000cd20    0000001e     ansicontrol.obj (.text:_Z10HideCursorv)
+                  0000cd3e    0000001e     ansicontrol.obj (.text:_Z10ShowCursorv)
+                  0000cd5c    0000001c     ansicontrol.obj (.text:_Z10ClearToEndv)
+                  0000cd78    0000001a     rts430_eabi.lib : boot.obj (.text:_c_int00_noexit)
+                  0000cd92    00000018                     : strcmp.obj (.text:strcmp)
+                  0000cdaa    00000016     main.obj (.text:_Z7Timer_Av)
+                  0000cdc0    00000016     rts430_eabi.lib : div16u.obj (.text)
+                  0000cdd6    00000014     uart.obj (.text:_Z16uart_send_stringPc)
+                  0000cdea    00000014     main.obj (.text:_Z7sysinitv)
+                  0000cdfe    00000014     main.obj (.text:_Z9timerinitv)
+                  0000ce12    00000014     rts430_eabi.lib : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
+                  0000ce26    00000014                     : memset.obj (.text:memset)
+                  0000ce3a    00000014                     : mult16.obj (.text)
+                  0000ce4e    00000012     uart.obj (.text:_ZlsR7OStreamPc)
+                  0000ce60    00000012     rts430_eabi.lib : copy_decompress_none.obj (.text:decompress:none:__TI_decompress_none)
+                  0000ce72    00000012                     : memcpy.obj (.text:memcpy)
+                  0000ce84    00000010     uart.obj (.text:_Z9uart_sendh)
+                  0000ce94    00000010     cli.obj (.text:_ZN4Line12AcceptKeyEndEv)
+                  0000cea4    00000010     cli.obj (.text:_ZN4LineC1Ev)
+                  0000ceb4    00000010     uart.obj (.text:_ZlsR7OStreamc)
+                  0000cec4    00000010     rts430_eabi.lib : epilog.obj (.text)
+                  0000ced4    0000000e     cli.obj (.text:_ZN4Line13AcceptKeyHomeEv)
+                  0000cee2    0000000e     cli.obj (.text:_ZN4Line14AcceptKeyRightEv)
+                  0000cef0    0000000c     cli.obj (.text:_ZN4Line13AcceptKeyLeftEv)
+                  0000cefc    0000000a     uart.obj (.text:_Z9QUEUEInitP5QUEUE)
+                  0000cf06    0000000a     rts430_eabi.lib : typeinfo_.obj (.text:_ZN10__cxxabiv117__class_type_infoD0Ev)
+                  0000cf10    0000000a                     : typeinfo_.obj (.text:_ZN10__cxxabiv120__si_class_type_infoD0Ev)
+                  0000cf1a    0000000a     cli.obj (.text:_ZN4Line5ResetEv)
+                  0000cf24    0000000a     rts430_eabi.lib : delete.obj (.text:_ZdlPv)
+                  0000cf2e    00000008     uart.obj (.text:_ZN10StdOStream7PutCharEc)
+                  0000cf36    00000008     uart.obj (.text:_ZN10StdOStream9PutStringEPc)
+                  0000cf3e    00000008     rts430_eabi.lib : pure_virt.obj (.text:__cxa_pure_virtual)
+                  0000cf46    00000006     cli.obj (.text:_ZN3Cli6KeyEndEv)
+                  0000cf4c    00000006     cli.obj (.text:_ZN3Cli7KeyHomeEv)
+                  0000cf52    00000006     cli.obj (.text:_ZN3Cli7KeyLeftEv)
+                  0000cf58    00000006     cli.obj (.text:_ZN3Cli8KeyRightEv)
+                  0000cf5e    00000006     rts430_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24:__TI_decompress_rle24)
+                  0000cf64    00000004                     : error.obj (.text:__abort_execution)
+                  0000cf68    00000004                     : pre_init.obj (.text:_system_pre_init)
+                  0000cf6c    00000004                     : exit.obj (.text:abort)
+                  0000cf70    00000002     uart.obj (.text:_ZN10ErrOStream7PutCharEc)
+                  0000cf72    00000002     uart.obj (.text:_ZN10ErrOStream9PutStringEPc)
+                  0000cf74    00000002     rts430_eabi.lib : typeinfo_.obj (.text:_ZN10__cxxabiv117__class_type_infoD1Ev)
+                  0000cf76    00000002                     : typeinfo_.obj (.text:_ZN10__cxxabiv120__si_class_type_infoD1Ev)
+                  0000cf78    00000002     uart.obj (.text:_ZN12DebugOStream7PutCharEc)
+                  0000cf7a    00000002     uart.obj (.text:_ZN12DebugOStream9PutStringEPc)
+                  0000cf7c    00000002     cli.obj (.text:_ZN4Line11AcceptKeyCREv)
+                  0000cf7e    00000002     cli.obj (.text:_ZN4Line11AcceptKeyUPEv)
+                  0000cf80    00000002     cli.obj (.text:_ZN4Line12AcceptKeyETXEv)
+                  0000cf82    00000002     cli.obj (.text:_ZN4Line12AcceptKeyTABEv)
+                  0000cf84    00000002     cli.obj (.text:_ZN4Line13AcceptKeyDownEv)
+                  0000cf86    00000002     rts430_eabi.lib : _lock.obj (.text:_nop)
+
+.const     0    0000cf88    0000022d     
+                  0000cf88    000000d2     cli.obj (.const:.string)
+                  0000d05a    00000025     rts430_eabi.lib : typeinfo_.obj (.const:.string:_ZTSN10__cxxabiv120__si_class_type_infoE)
+                  0000d07f    00000001     --HOLE-- [fill = 0]
+                  0000d080    00000022                     : typeinfo_.obj (.const:.string:_ZTSN10__cxxabiv117__class_type_infoE)
+                  0000d0a2    00000020     cli.obj (.const:_ZTV4Line)
+                  0000d0c2    00000014     ansicontrol.obj (.const:.string:$P$T8$9)
+                  0000d0d6    0000000f     uart.obj (.const:.string:_ZTS12DebugOStream)
+                  0000d0e5    00000001     --HOLE-- [fill = 0]
+                  0000d0e6    0000000d     uart.obj (.const:.string:_ZTS10ErrOStream)
+                  0000d0f3    00000001     --HOLE-- [fill = 0]
+                  0000d0f4    0000000d     uart.obj (.const:.string:_ZTS10StdOStream)
+                  0000d101    00000001     --HOLE-- [fill = 0]
+                  0000d102    0000000d     rts430_eabi.lib : typeinfo_.obj (.const:.string:_ZTSSt9type_info)
+                  0000d10f    00000001     --HOLE-- [fill = 0]
+                  0000d110    0000000c     main.obj (.const:.string:$P$T0$2)
+                  0000d11c    0000000c     main.obj (.const:.string:$P$T1$3)
+                  0000d128    00000009     uart.obj (.const:.string:_ZTS7OStream)
+                  0000d131    00000001     --HOLE-- [fill = 0]
+                  0000d132    00000008     uart.obj (.const:_ZTV10ErrOStream)
+                  0000d13a    00000008     uart.obj (.const:_ZTV10StdOStream)
+                  0000d142    00000008     uart.obj (.const:_ZTV12DebugOStream)
+                  0000d14a    00000008     uart.obj (.const:_ZTV7OStream)
+                  0000d152    00000008     rts430_eabi.lib : typeinfo_.obj (.const:_ZTVN10__cxxabiv117__class_type_infoE)
+                  0000d15a    00000008                     : typeinfo_.obj (.const:_ZTVN10__cxxabiv120__si_class_type_infoE)
+                  0000d162    00000007     ansicontrol.obj (.const:.string:$P$T4$5)
+                  0000d169    00000001     --HOLE-- [fill = 0]
+                  0000d16a    00000007     ansicontrol.obj (.const:.string:$P$T5$6)
+                  0000d171    00000001     --HOLE-- [fill = 0]
+                  0000d172    00000006     cli.obj (.const:.string:_ZTS4Line)
+                  0000d178    00000006     main.obj (.const:.string:_ZZN3Cli6PromptEvEs)
+                  0000d17e    00000006     uart.obj (.const:_ZTI10ErrOStream)
+                  0000d184    00000006     uart.obj (.const:_ZTI10StdOStream)
+                  0000d18a    00000006     uart.obj (.const:_ZTI12DebugOStream)
+                  0000d190    00000006     rts430_eabi.lib : typeinfo_.obj (.const:_ZTIN10__cxxabiv117__class_type_infoE)
+                  0000d196    00000006                     : typeinfo_.obj (.const:_ZTIN10__cxxabiv120__si_class_type_infoE)
+                  0000d19c    00000005     ansicontrol.obj (.const:.string:$P$T2$3)
+                  0000d1a1    00000001     --HOLE-- [fill = 0]
+                  0000d1a2    00000004     ansicontrol.obj (.const:.string:$P$T3$4)
+                  0000d1a6    00000004     cli.obj (.const:_ZTI4Line)
+                  0000d1aa    00000004     uart.obj (.const:_ZTI7OStream)
+                  0000d1ae    00000004     rts430_eabi.lib : typeinfo_.obj (.const:_ZTISt9type_info)
+                  0000d1b2    00000003     main.obj (.const:.string:_ZZN3Cli5FlushEvEs)
+
+.init_array 
+*          0    0000d1b6    00000004     
+                  0000d1b6    00000002     main.obj (.init_array)
+                  0000d1b8    00000002     uart.obj (.init_array)
+
+.cinit     0    0000d1ba    0000001e     
+                  0000d1ba    0000000c     (.cinit..data.load) [load image]
+                  0000d1c6    00000006     (__TI_handler_table)
+                  0000d1cc    00000004     (.cinit..bss.load) [load image, compression = zero_init]
+                  0000d1d0    00000008     (__TI_cinit_table)
+
+USCIAB0RX 
+*          0    0000ffee    00000002     
+                  0000ffee    00000002     uart.obj (.int07)
+
+TIMER0_A0 
+*          0    0000fff2    00000002     
+                  0000fff2    00000002     main.obj (.int09)
+
+.reset     0    0000fffe    00000002     
+                  0000fffe    00000002     rts430_eabi.lib : boot.obj (.reset)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 0000d1d0 records: 2, size/record: 4, table size: 8
+	.data: load addr=0000d1ba, load size=0000000c bytes, run addr=0000032c, run size=00000008 bytes, compression=copy
+	.bss: load addr=0000d1cc, load size=00000004 bytes, run addr=00000200, run size=000000dc bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 0000d1c6 records: 3, size/record: 2, table size: 6
+	index: 0, handler: __TI_zero_init
+	index: 1, handler: __TI_decompress_rle24
+	index: 2, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+0000004a   ADC10AE0
+000001b0   ADC10CTL0
+000001b2   ADC10CTL1
+00000048   ADC10DTC0
+00000049   ADC10DTC1
+000001b4   ADC10MEM
+000001bc   ADC10SA
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000053   BCSCTL3
+0000cf6c   C$$EXIT
+00000059   CACTL1
+0000005a   CACTL2
+000010fb   CALBC1_12MHZ
+000010f9   CALBC1_16MHZ
+000010ff   CALBC1_1MHZ
+000010fd   CALBC1_8MHZ
+000010fa   CALDCO_12MHZ
+000010f8   CALDCO_16MHZ
+000010fe   CALDCO_1MHZ
+000010fc   CALDCO_8MHZ
+0000005b   CAPD
+00000056   DCOCTL
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+00000000   IE1
+00000001   IE2
+00000002   IFG1
+00000003   IFG2
+00000022   P1DIR
+00000025   P1IE
+00000024   P1IES
+00000023   P1IFG
+00000020   P1IN
+00000021   P1OUT
+00000027   P1REN
+00000026   P1SEL
+00000041   P1SEL2
+0000002a   P2DIR
+0000002d   P2IE
+0000002c   P2IES
+0000002b   P2IFG
+00000028   P2IN
+00000029   P2OUT
+0000002f   P2REN
+0000002e   P2SEL
+00000042   P2SEL2
+0000001a   P3DIR
+00000018   P3IN
+00000019   P3OUT
+00000010   P3REN
+0000001b   P3SEL
+00000043   P3SEL2
+00000172   TA0CCR0
+00000174   TA0CCR1
+00000176   TA0CCR2
+00000162   TA0CCTL0
+00000164   TA0CCTL1
+00000166   TA0CCTL2
+00000160   TA0CTL
+0000012e   TA0IV
+00000170   TA0R
+00000192   TA1CCR0
+00000194   TA1CCR1
+00000196   TA1CCR2
+00000182   TA1CCTL0
+00000184   TA1CCTL1
+00000186   TA1CCTL2
+00000180   TA1CTL
+0000011e   TA1IV
+00000190   TA1R
+0000005d   UCA0ABCTL
+00000062   UCA0BR0
+00000063   UCA0BR1
+00000060   UCA0CTL0
+00000061   UCA0CTL1
+0000005f   UCA0IRRCTL
+0000005e   UCA0IRTCTL
+00000064   UCA0MCTL
+00000066   UCA0RXBUF
+00000065   UCA0STAT
+00000067   UCA0TXBUF
+0000006a   UCB0BR0
+0000006b   UCB0BR1
+00000068   UCB0CTL0
+00000069   UCB0CTL1
+0000006c   UCB0I2CIE
+00000118   UCB0I2COA
+0000011a   UCB0I2CSA
+0000006e   UCB0RXBUF
+0000006d   UCB0STAT
+0000006f   UCB0TXBUF
+00000120   WDTCTL
+0000cd5c   _Z10ClearToEndv
+0000cd20   _Z10HideCursorv
+0000cb88   _Z10QUEUEWriteP5QUEUEh
+0000c56a   _Z10SetCursor1ii
+0000cd3e   _Z10ShowCursorv
+0000ccdc   _Z11ClearScreanv
+0000cc8e   _Z11USCI0RX_ISRv
+0000c436   _Z12printiostatev
+0000ca72   _Z14simple_str2intPcPi
+0000cdd6   _Z16uart_send_stringPc
+0000cab2   _Z6ioinitv
+0000c886   _Z6setdiriii
+0000cdaa   _Z7Timer_Av
+0000cdea   _Z7sysinitv
+0000c8ec   _Z8setvalueiii
+0000caf0   _Z8uartinitv
+0000cefc   _Z9QUEUEInitP5QUEUE
+0000ccfe   _Z9QUEUEReadP5QUEUEPh
+0000cdfe   _Z9timerinitv
+0000ce84   _Z9uart_sendh
+0000cf70   _ZN10ErrOStream7PutCharEc
+0000cf72   _ZN10ErrOStream9PutStringEPc
+0000cf2e   _ZN10StdOStream7PutCharEc
+0000cf36   _ZN10StdOStream9PutStringEPc
+0000cf06   _ZN10__cxxabiv117__class_type_infoD0Ev
+0000cf74   _ZN10__cxxabiv117__class_type_infoD1Ev
+0000cf74   _ZN10__cxxabiv117__class_type_infoD2Ev
+0000cf10   _ZN10__cxxabiv120__si_class_type_infoD0Ev
+0000cf76   _ZN10__cxxabiv120__si_class_type_infoD1Ev
+0000cf76   _ZN10__cxxabiv120__si_class_type_infoD2Ev
+0000cf78   _ZN12DebugOStream7PutCharEc
+0000cf7a   _ZN12DebugOStream9PutStringEPc
+0000cbb4   _ZN3Cli5KeyUpEv
+0000cf46   _ZN3Cli6KeyEndEv
+0000cf4c   _ZN3Cli7KeyHomeEv
+0000cf52   _ZN3Cli7KeyLeftEv
+0000cf58   _ZN3Cli8KeyRightEv
+0000c812   _ZN3Cli9AcceptKeyEh
+0000c000   _ZN3Cli9KeyNormalEh
+0000cbe0   _ZN4Line11AcceptKeyBSEv
+0000cf7c   _ZN4Line11AcceptKeyCREv
+0000cf7e   _ZN4Line11AcceptKeyUPEv
+0000cc64   _ZN4Line12AcceptKeyDELEv
+0000cf80   _ZN4Line12AcceptKeyETXEv
+0000ce94   _ZN4Line12AcceptKeyEndEv
+0000cf82   _ZN4Line12AcceptKeyTABEv
+0000cf84   _ZN4Line13AcceptKeyDownEv
+0000ced4   _ZN4Line13AcceptKeyHomeEv
+0000cef0   _ZN4Line13AcceptKeyLeftEv
+0000cee2   _ZN4Line14AcceptKeyRightEv
+0000c952   _ZN4Line15AcceptKeyNormalEh
+0000ccb6   _ZN4Line5FlushEv
+0000cf1a   _ZN4Line5ResetEv
+0000cea4   _ZN4LineC1Ev
+0000cea4   _ZN4LineC2Ev
+0000d17e   _ZTI10ErrOStream
+0000d184   _ZTI10StdOStream
+0000d18a   _ZTI12DebugOStream
+0000d1a6   _ZTI4Line
+0000d1aa   _ZTI7OStream
+0000d190   _ZTIN10__cxxabiv117__class_type_infoE
+0000d196   _ZTIN10__cxxabiv120__si_class_type_infoE
+0000d1ae   _ZTISt9type_info
+0000d0e6   _ZTS10ErrOStream
+0000d0f4   _ZTS10StdOStream
+0000d0d6   _ZTS12DebugOStream
+0000d172   _ZTS4Line
+0000d128   _ZTS7OStream
+0000d080   _ZTSN10__cxxabiv117__class_type_infoE
+0000d05a   _ZTSN10__cxxabiv120__si_class_type_infoE
+0000d102   _ZTSSt9type_info
+0000d132   _ZTV10ErrOStream
+0000d13a   _ZTV10StdOStream
+0000d142   _ZTV12DebugOStream
+0000d0a2   _ZTV4Line
+0000d14a   _ZTV7OStream
+0000d152   _ZTVN10__cxxabiv117__class_type_infoE
+0000d15a   _ZTVN10__cxxabiv120__si_class_type_infoE
+0000d1b2   _ZZN3Cli5FlushEvEs
+0000d178   _ZZN3Cli6PromptEvEs
+0000cf24   _ZdlPv
+0000ce4e   _ZlsR7OStreamPc
+0000ceb4   _ZlsR7OStreamc
+00000400   __STACK_END
+00000050   __STACK_SIZE
+00000050   __SYSMEM_SIZE
+0000d1d0   __TI_CINIT_Base
+0000d1d8   __TI_CINIT_Limit
+0000d1c6   __TI_Handler_Table_Base
+0000d1cc   __TI_Handler_Table_Limit
+0000d1b6   __TI_INITARRAY_Base
+0000d1ba   __TI_INITARRAY_Limit
+00000001   __TI_args_main
+0000ce60   __TI_decompress_none
+0000cf5e   __TI_decompress_rle24
+00000001   __TI_exit
+0000ce12   __TI_zero_init
+0000cf64   __abort_execution
+ffffffff   __binit__
+ffffffff   __c_args__
+0000cf3e   __cxa_pure_virtual
+000002d4   __debugout
+000002d2   __errout
+0000cc0c   __mspabi_divi
+0000cdc0   __mspabi_divu
+0000ced0   __mspabi_func_epilog_1
+0000cece   __mspabi_func_epilog_2
+0000cecc   __mspabi_func_epilog_3
+0000ceca   __mspabi_func_epilog_4
+0000cec8   __mspabi_func_epilog_5
+0000cec6   __mspabi_func_epilog_6
+0000cec4   __mspabi_func_epilog_7
+0000ce3a   __mspabi_mpyi
+0000cc0c   __mspabi_remi
+0000cdc0   __mspabi_remu
+0000cc38   __mspabi_slli
+0000cc60   __mspabi_slli_1
+0000cc4e   __mspabi_slli_10
+0000cc4c   __mspabi_slli_11
+0000cc4a   __mspabi_slli_12
+0000cc48   __mspabi_slli_13
+0000cc46   __mspabi_slli_14
+0000cc44   __mspabi_slli_15
+0000cc5e   __mspabi_slli_2
+0000cc5c   __mspabi_slli_3
+0000cc5a   __mspabi_slli_4
+0000cc58   __mspabi_slli_5
+0000cc56   __mspabi_slli_6
+0000cc54   __mspabi_slli_7
+0000cc52   __mspabi_slli_8
+0000cc50   __mspabi_slli_9
+000002d0   __stdout
+0000cb58   __sti___8_main_cpp_45180902
+0000cb26   __sti___8_uart_cpp___stdout
+0000ca14   _auto_init
+0000cd78   _c_int00
+0000cd78   _c_int00_noexit
+00000330   _lock
+0000cf86   _nop
+0000fffe   _reset_vector
+000003b0   _stack
+000002dc   _sys_memory
+0000cf68   _system_pre_init
+00000332   _unlock
+0000cf6c   abort
+ffffffff   binit
+00000200   cli
+0000c792   free
+0000c694   main
+0000ce72   memcpy
+0000ce26   memset
+0000028e   rx_buf
+0000cd92   strcmp
+0000032c   timerflag
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   IE1
+00000001   IE2
+00000001   __TI_args_main
+00000001   __TI_exit
+00000002   IFG1
+00000003   IFG2
+00000010   P3REN
+00000018   P3IN
+00000019   P3OUT
+0000001a   P3DIR
+0000001b   P3SEL
+00000020   P1IN
+00000021   P1OUT
+00000022   P1DIR
+00000023   P1IFG
+00000024   P1IES
+00000025   P1IE
+00000026   P1SEL
+00000027   P1REN
+00000028   P2IN
+00000029   P2OUT
+0000002a   P2DIR
+0000002b   P2IFG
+0000002c   P2IES
+0000002d   P2IE
+0000002e   P2SEL
+0000002f   P2REN
+00000041   P1SEL2
+00000042   P2SEL2
+00000043   P3SEL2
+00000048   ADC10DTC0
+00000049   ADC10DTC1
+0000004a   ADC10AE0
+00000050   __STACK_SIZE
+00000050   __SYSMEM_SIZE
+00000053   BCSCTL3
+00000056   DCOCTL
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000059   CACTL1
+0000005a   CACTL2
+0000005b   CAPD
+0000005d   UCA0ABCTL
+0000005e   UCA0IRTCTL
+0000005f   UCA0IRRCTL
+00000060   UCA0CTL0
+00000061   UCA0CTL1
+00000062   UCA0BR0
+00000063   UCA0BR1
+00000064   UCA0MCTL
+00000065   UCA0STAT
+00000066   UCA0RXBUF
+00000067   UCA0TXBUF
+00000068   UCB0CTL0
+00000069   UCB0CTL1
+0000006a   UCB0BR0
+0000006b   UCB0BR1
+0000006c   UCB0I2CIE
+0000006d   UCB0STAT
+0000006e   UCB0RXBUF
+0000006f   UCB0TXBUF
+00000118   UCB0I2COA
+0000011a   UCB0I2CSA
+0000011e   TA1IV
+00000120   WDTCTL
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+0000012e   TA0IV
+00000160   TA0CTL
+00000162   TA0CCTL0
+00000164   TA0CCTL1
+00000166   TA0CCTL2
+00000170   TA0R
+00000172   TA0CCR0
+00000174   TA0CCR1
+00000176   TA0CCR2
+00000180   TA1CTL
+00000182   TA1CCTL0
+00000184   TA1CCTL1
+00000186   TA1CCTL2
+00000190   TA1R
+00000192   TA1CCR0
+00000194   TA1CCR1
+00000196   TA1CCR2
+000001b0   ADC10CTL0
+000001b2   ADC10CTL1
+000001b4   ADC10MEM
+000001bc   ADC10SA
+00000200   cli
+0000028e   rx_buf
+000002d0   __stdout
+000002d2   __errout
+000002d4   __debugout
+000002dc   _sys_memory
+0000032c   timerflag
+00000330   _lock
+00000332   _unlock
+000003b0   _stack
+00000400   __STACK_END
+000010f8   CALDCO_16MHZ
+000010f9   CALBC1_16MHZ
+000010fa   CALDCO_12MHZ
+000010fb   CALBC1_12MHZ
+000010fc   CALDCO_8MHZ
+000010fd   CALBC1_8MHZ
+000010fe   CALDCO_1MHZ
+000010ff   CALBC1_1MHZ
+0000c000   _ZN3Cli9KeyNormalEh
+0000c436   _Z12printiostatev
+0000c56a   _Z10SetCursor1ii
+0000c694   main
+0000c792   free
+0000c812   _ZN3Cli9AcceptKeyEh
+0000c886   _Z6setdiriii
+0000c8ec   _Z8setvalueiii
+0000c952   _ZN4Line15AcceptKeyNormalEh
+0000ca14   _auto_init
+0000ca72   _Z14simple_str2intPcPi
+0000cab2   _Z6ioinitv
+0000caf0   _Z8uartinitv
+0000cb26   __sti___8_uart_cpp___stdout
+0000cb58   __sti___8_main_cpp_45180902
+0000cb88   _Z10QUEUEWriteP5QUEUEh
+0000cbb4   _ZN3Cli5KeyUpEv
+0000cbe0   _ZN4Line11AcceptKeyBSEv
+0000cc0c   __mspabi_divi
+0000cc0c   __mspabi_remi
+0000cc38   __mspabi_slli
+0000cc44   __mspabi_slli_15
+0000cc46   __mspabi_slli_14
+0000cc48   __mspabi_slli_13
+0000cc4a   __mspabi_slli_12
+0000cc4c   __mspabi_slli_11
+0000cc4e   __mspabi_slli_10
+0000cc50   __mspabi_slli_9
+0000cc52   __mspabi_slli_8
+0000cc54   __mspabi_slli_7
+0000cc56   __mspabi_slli_6
+0000cc58   __mspabi_slli_5
+0000cc5a   __mspabi_slli_4
+0000cc5c   __mspabi_slli_3
+0000cc5e   __mspabi_slli_2
+0000cc60   __mspabi_slli_1
+0000cc64   _ZN4Line12AcceptKeyDELEv
+0000cc8e   _Z11USCI0RX_ISRv
+0000ccb6   _ZN4Line5FlushEv
+0000ccdc   _Z11ClearScreanv
+0000ccfe   _Z9QUEUEReadP5QUEUEPh
+0000cd20   _Z10HideCursorv
+0000cd3e   _Z10ShowCursorv
+0000cd5c   _Z10ClearToEndv
+0000cd78   _c_int00
+0000cd78   _c_int00_noexit
+0000cd92   strcmp
+0000cdaa   _Z7Timer_Av
+0000cdc0   __mspabi_divu
+0000cdc0   __mspabi_remu
+0000cdd6   _Z16uart_send_stringPc
+0000cdea   _Z7sysinitv
+0000cdfe   _Z9timerinitv
+0000ce12   __TI_zero_init
+0000ce26   memset
+0000ce3a   __mspabi_mpyi
+0000ce4e   _ZlsR7OStreamPc
+0000ce60   __TI_decompress_none
+0000ce72   memcpy
+0000ce84   _Z9uart_sendh
+0000ce94   _ZN4Line12AcceptKeyEndEv
+0000cea4   _ZN4LineC1Ev
+0000cea4   _ZN4LineC2Ev
+0000ceb4   _ZlsR7OStreamc
+0000cec4   __mspabi_func_epilog_7
+0000cec6   __mspabi_func_epilog_6
+0000cec8   __mspabi_func_epilog_5
+0000ceca   __mspabi_func_epilog_4
+0000cecc   __mspabi_func_epilog_3
+0000cece   __mspabi_func_epilog_2
+0000ced0   __mspabi_func_epilog_1
+0000ced4   _ZN4Line13AcceptKeyHomeEv
+0000cee2   _ZN4Line14AcceptKeyRightEv
+0000cef0   _ZN4Line13AcceptKeyLeftEv
+0000cefc   _Z9QUEUEInitP5QUEUE
+0000cf06   _ZN10__cxxabiv117__class_type_infoD0Ev
+0000cf10   _ZN10__cxxabiv120__si_class_type_infoD0Ev
+0000cf1a   _ZN4Line5ResetEv
+0000cf24   _ZdlPv
+0000cf2e   _ZN10StdOStream7PutCharEc
+0000cf36   _ZN10StdOStream9PutStringEPc
+0000cf3e   __cxa_pure_virtual
+0000cf46   _ZN3Cli6KeyEndEv
+0000cf4c   _ZN3Cli7KeyHomeEv
+0000cf52   _ZN3Cli7KeyLeftEv
+0000cf58   _ZN3Cli8KeyRightEv
+0000cf5e   __TI_decompress_rle24
+0000cf64   __abort_execution
+0000cf68   _system_pre_init
+0000cf6c   C$$EXIT
+0000cf6c   abort
+0000cf70   _ZN10ErrOStream7PutCharEc
+0000cf72   _ZN10ErrOStream9PutStringEPc
+0000cf74   _ZN10__cxxabiv117__class_type_infoD1Ev
+0000cf74   _ZN10__cxxabiv117__class_type_infoD2Ev
+0000cf76   _ZN10__cxxabiv120__si_class_type_infoD1Ev
+0000cf76   _ZN10__cxxabiv120__si_class_type_infoD2Ev
+0000cf78   _ZN12DebugOStream7PutCharEc
+0000cf7a   _ZN12DebugOStream9PutStringEPc
+0000cf7c   _ZN4Line11AcceptKeyCREv
+0000cf7e   _ZN4Line11AcceptKeyUPEv
+0000cf80   _ZN4Line12AcceptKeyETXEv
+0000cf82   _ZN4Line12AcceptKeyTABEv
+0000cf84   _ZN4Line13AcceptKeyDownEv
+0000cf86   _nop
+0000d05a   _ZTSN10__cxxabiv120__si_class_type_infoE
+0000d080   _ZTSN10__cxxabiv117__class_type_infoE
+0000d0a2   _ZTV4Line
+0000d0d6   _ZTS12DebugOStream
+0000d0e6   _ZTS10ErrOStream
+0000d0f4   _ZTS10StdOStream
+0000d102   _ZTSSt9type_info
+0000d128   _ZTS7OStream
+0000d132   _ZTV10ErrOStream
+0000d13a   _ZTV10StdOStream
+0000d142   _ZTV12DebugOStream
+0000d14a   _ZTV7OStream
+0000d152   _ZTVN10__cxxabiv117__class_type_infoE
+0000d15a   _ZTVN10__cxxabiv120__si_class_type_infoE
+0000d172   _ZTS4Line
+0000d178   _ZZN3Cli6PromptEvEs
+0000d17e   _ZTI10ErrOStream
+0000d184   _ZTI10StdOStream
+0000d18a   _ZTI12DebugOStream
+0000d190   _ZTIN10__cxxabiv117__class_type_infoE
+0000d196   _ZTIN10__cxxabiv120__si_class_type_infoE
+0000d1a6   _ZTI4Line
+0000d1aa   _ZTI7OStream
+0000d1ae   _ZTISt9type_info
+0000d1b2   _ZZN3Cli5FlushEvEs
+0000d1b6   __TI_INITARRAY_Base
+0000d1ba   __TI_INITARRAY_Limit
+0000d1c6   __TI_Handler_Table_Base
+0000d1cc   __TI_Handler_Table_Limit
+0000d1d0   __TI_CINIT_Base
+0000d1d8   __TI_CINIT_Limit
+0000fffe   _reset_vector
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+
+[248 symbols]
