@@ -3,8 +3,8 @@
 
 void SetColor(Color color)
 {
-	char str[] = "\033[41;32mTSET";
-	str[3] = color;
+	char str[] = "\033[31;40m";
+	str[3] = color+'0';
 	__stdout << str;
 }
 
